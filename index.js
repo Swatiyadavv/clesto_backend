@@ -13,10 +13,8 @@ app.use(cors())
 var path = require('path')
 app.use("/upload",express.static(path.join(__dirname,'upload')))
 app.use("/style/upload",express.static(path.join(__dirname,'upload')))
-
 dotenv.config()
 const Port = process.env.PORT;
-// const mongoUrl = process.env.MongoUrl;
 const mongoUrl = process.env.MONGO_URI;
 
 try

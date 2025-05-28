@@ -15,7 +15,9 @@ const addStyle = async (req, res) => {
                 fs.unlinkSync(`./upload/${req.file.filename}`);
                 return res.status(404).send({ message: "Failed", error: "Invalid file extension" });
             }
-            imageUrl = `http://localhost:5000/upload/${req.file.filename}`;
+            imageUrl = `${process.env.BASE_URL}/upload/${req.file.filename}`;
+
+
         }
         const event = {
             name: req.body.name,
