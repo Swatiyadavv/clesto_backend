@@ -48,8 +48,6 @@ UserSchema.static('matchPassword',async function(email,password)
         }
     const  token = jwt.sign({userid:users._id},S_Key,{expiresIn:'1h'})
     return token;
-
 })
-
 const UserModel  = mongoose.model("user",UserSchema)
 module.exports = UserModel;
